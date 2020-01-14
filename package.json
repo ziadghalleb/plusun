@@ -1,8 +1,5 @@
 {
   "name": "plusun",
-  "engines" : {
-    "node" : "13.6.0"
-  },
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2.2",
