@@ -1,5 +1,8 @@
 {
   "name": "plusun",
+  "engines" : {
+    "node" : "13.6.0"
+  },
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2.2",
@@ -9,5 +12,8 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
