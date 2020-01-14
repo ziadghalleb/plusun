@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: plusun_production
-  username:
+  username: plusun
   password: <%= ENV['PLUSUN_DATABASE_PASSWORD'] %>
