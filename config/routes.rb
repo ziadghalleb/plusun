@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # Routes for the User Model
-  resources :users, only: [:index, :show, :update, :destroy]
-  
+  # resources :users, only: [:index, :show, :update, :destroy]
+
   # Routes for the Service Model
   resources :services
 
