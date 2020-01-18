@@ -1,0 +1,8 @@
+<% @services.each do |service| %>
+  <h2><%= service.name %></h2>
+  <h2><%= service.category %></h2>
+  <h2><%= service.price_hourly %></h2>
+  <h2><%= service.price_daily %></h2>
+  <p><%= service.description %></p>
+
+<% end %>
