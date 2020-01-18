@@ -10,7 +10,7 @@ require "faker"
 
 index = 0
 
-10.times do
+for i in 1..12 do
   fake_user1 = Faker::Internet
   faker_user2 = Faker::Name
   faker_user3 = Faker::Gender
