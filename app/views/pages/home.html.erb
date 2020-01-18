@@ -1,17 +1,15 @@
+<section class="banner">
+<!-- <div class="banner" style="background-image: url('<%= image_path "Banner.png" %>')"> -->
+  <div class="container">
+    <h1><strong>Votre plus un au bal masqué ?</strong></h1>
+  </div>
+</section>
 
-<div class="container-fluid">
-  <section class="banner w-100">
-  <!-- <div class="banner" style="background-image: url('<%= image_path "Banner.png" %>')"> -->
-    <div class="container">
-      <h1><strong>Votre plus un au bal masqué ?</strong></h1>
-    </div>
-  </section>
-
-  <section class="py-6 bg-gray-100">
+<section class="py-6 bg-gray-100">
     <div class="container">
       <div class="text-center pb-lg-4">
         <p class="subtitle text-secondary">UN +1 POUR TOUTES LES OCCASIONS</p>
-        <h2 class="mb-5"> Votre +1 n’attend plus que vous !</h2>
+        <h2 class="mb-5"> Votre +1 n'attend plus que vous !</h2>
       </div>
       <div class="row">
         <div class="col-lg-4 mb-3 mb-lg-0 text-center">
@@ -45,11 +43,12 @@
   <p class="subtitle text-secondary"> Une expérience unique</p>
   <h2>Trouvez votre +1</h2>
 
-  <div class="row mb-3">
-    <% @services.first(8).each do |service|  %>
+<div class="row">
+  <% @services.first(4).each do |service|  %>
+    <%= link_to service_path(service) do%>
       <div class="col">
-        <div class="card mx-2 my-2">
-          <div class="card-banner">
+        <div class="card border-0">
+          <div class= card-banner>
             <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
             <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
           </div>
@@ -57,8 +56,8 @@
             <a href="#" class="card-title">Le +1 de ton prochain dîner de Noël !</a>
             <div class="d-flex justify-content-between">
               <div class="card-subtitle mb-3">
-                <p class="mb-0 text-muted text-sm"><%= service.user.age %></p>
-                <p class="mb-0 text-muted text-sm">1,78m</p>
+                <p class="mb-0 text-muted text-sm"><%= service.user.age  %> ans</p>
+                <p class="mb-0 text-muted text-sm"><%= service.user.height  %></p>
                 <p class="mb-0 text-muted text-sm">Le Wagon</p>
               </div>
               <div class="align-self-end">
@@ -71,5 +70,5 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
