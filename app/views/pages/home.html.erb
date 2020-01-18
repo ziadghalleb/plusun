@@ -46,29 +46,31 @@
 
 <div class="row">
   <% @services.first(4).each do |service|  %>
-    <div class="col">
-      <div class="card border-0">
-        <div class= card-banner>
-          <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
-          <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
-        </div>
-        <div class="card-body">
-          <a href="#" class="card-title">Le +1 de ton prochain dîner de Noël !</a>
-          <div class="d-flex justify-content-between">
-            <div class="card-subtitle mb-3">
-              <p class="mb-0 text-muted text-sm">25 ans</p>
-              <p class="mb-0 text-muted text-sm">1,78m</p>
-              <p class="mb-0 text-muted text-sm">Le Wagon</p>
-            </div>
-            <div class="align-self-end">
-              <p class="text-muted">
-                <span class="h4 text-primary"><%= service.price_hourly %></span> €/heure
-              </p>
+    <%= link_to service_path(service) do%>
+      <div class="col">
+        <div class="card border-0">
+          <div class= card-banner>
+            <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
+            <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="card-title">Le +1 de ton prochain dîner de Noël !</a>
+            <div class="d-flex justify-content-between">
+              <div class="card-subtitle mb-3">
+                <p class="mb-0 text-muted text-sm">25 ans</p>
+                <p class="mb-0 text-muted text-sm">1,78m</p>
+                <p class="mb-0 text-muted text-sm">Le Wagon</p>
+              </div>
+              <div class="align-self-end">
+                <p class="text-muted">
+                  <span class="h4 text-primary"><%= service.price_hourly %></span> €/heure
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
