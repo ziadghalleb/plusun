@@ -19,21 +19,7 @@
 
       <div class="col-xs-12 col-sm-12 col-md-4 card-booking p-0">
         <div class="service-booking p-3  border rounded mt-4">
-          <p> 4,3* (9 commentaires)</p>
-          <div class="form">
-            <h3 class="text-uppercase mt-3 mb-2">Services</h3>
-            <div class="border rounded p-3 d-flex align-items-center">
-              <p class='mb-0'>
-                Mariage / Soirée
-              </p>
-            </div>
-            <h3 class="text-uppercase mt-3 mb-2">Dates</h3>
-            <div class="border rounded p-3 d-flex align-items-center">
-              <p class='mb-0'>
-                Mariage / Soirée
-              </p>
-            </div>
-          </div>
+          <%= render partial:"bookings/new", booking: @booking %>
         </div>
       </div>
     </div>
