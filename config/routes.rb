@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # Routes for the Service Model
-  resources :services
+  resources :services do
+    resources :bookings, only: [:create]
+  end
 
   # Routes for the Booking Model
-  resources :bookings
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
