@@ -1,20 +1,22 @@
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-8 card-presentation bg-primary">
+      <div class="col-xs-12 col-sm-12 col-md-8 card-presentation ">
         <div class="card-product">
-          <img src="https://res.cloudinary.com/dwt7xlsqr/image/upload/v1578497894/2EtTdVNuSvMbV9JVc4BNUqaX.jpg" alt="">
+
+
+          <%= image_tag "#{@service.user_id}.png" , class: "avatar" %>
+
+
           <div class="card-product-infos">
             <h2><%= @service.user.first_name %></h2>
-            <p>Taille <strong><%= @service.user.height %></strong> Alcool<strong><%= @service.user.alcool %> </strong> Tabac<strong><%= @service.user.tabac %></strong> </p>
+            <p>Taille <strong> <%= @service.user.height %></strong> Alcool<strong> <%= @service.user.alcool %> </strong> Tabac <strong><%= @service.user.tabac %></strong> </p>
           </div>
         </div>
         <div>
           <p> <%= @service.user.description %></p>
         </div>
 
-        <div class="calendar">
-          <h3>Calendrier</h3>
-        </div>
+
       </div>
 
       <div class="col-xs-12 col-sm-12 col-md-4 card-booking p-0">
