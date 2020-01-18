@@ -41,5 +41,5 @@ for i in 1..12 do
     price_daily: (index+1).to_s,
     user_id: (index+1).to_i
   )
-  service.save!  
+  service.save!
 end
