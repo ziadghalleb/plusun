@@ -8,8 +8,6 @@
 
 require "faker"
 
-index = 0
-
 for i in 1..12 do
   fake_user1 = Faker::Internet
   faker_user2 = Faker::Name
@@ -22,7 +20,7 @@ for i in 1..12 do
     password_confirmation: "lewagon",
     sexe: faker_user3.binary_type,
     age: rand(20..30),
-    photo: (index+1).to_s,
+    photo: (i).to_s,
     description: faker_user4.quote,
     height: rand(160..200),
     alcool: ['A l\'occasion', 'Jamais', 'Régulièrement'].sample,
@@ -38,8 +36,8 @@ for i in 1..12 do
     description: "none of your business",
     price_hourly: rand(20..60),
     # price_daily will serve the service pic
-    price_daily: (index+1).to_s,
-    user_id: (index+1).to_i
+    price_daily: (i).to_s,
+    user_id: (i).to_i
   )
   service.save!
 end
