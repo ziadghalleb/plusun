@@ -1,8 +1,34 @@
-<% @services.each do |service| %>
-  <h2><%= service.name %></h2>
-  <h2><%= service.category %></h2>
-  <h2><%= service.price_hourly %></h2>
-  <h2><%= service.price_daily %></h2>
-  <p><%= service.description %></p>
 
+<% @services.each do |service| %>
+  <h2><%#= service.name %></h2>
+  <h2><%#= service.category %></h2>
+  <h2><%#= service.price_hourly %></h2>
+  <h2><%#= service.price_daily %></h2>
+  <p><%#= service.description %></p>
+
+
+  <div class="card border-0">
+        <div class= card-banner>
+          <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
+          <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
+        </div>
+        <div class="card-body">
+          <a href="#" class="card-title"><%= service.name %> </a>
+          <div class="d-flex justify-content-between">
+            <div class="card-subtitle mb-3">
+              <p class="mb-0 text-muted text-sm"> <%= @users.select{ |user| user.id == service.user_id }[0].age %></p>
+              <p class="mb-0 text-muted text-sm">1,78m</p>
+              <p class="mb-0 text-muted text-sm">Le Wagon</p>
+            </div>
+            <div class="align-self-end">
+              <p class="text-muted">
+                <span class="h4 text-primary"><%= service.price_hourly %></span> €/heure
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </di
 <% end %>
+
+
