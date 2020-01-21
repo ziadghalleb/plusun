@@ -1,18 +1,31 @@
 
-  <p> 4,3* (9 commentaires)</p>
-  <div class="form">
-    <%= simple_form_for [@service, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
-      <%= f.input :end_date, as: :string, required: false, input_html: {id: "secondRangeInput"} %>
+<p> 4,3* (9 commentaires)</p>
+<div class="form">
+  <%= simple_form_for [@service, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+    <%= f.input :end_date, as: :string, required: false, input_html: {id: "secondRangeInput"} %>
+    <h2>Prix par heure <%=  @service.price_hourly %> /h</h2>
+    <span id="total_price"></span>
+    <%= f.submit "Reserver", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
-      <h2>Prix par heure <%=  @service.price_hourly %> /h</h2>
+<script>
+  maxDate = document.getElementById("secondRangeInput");
+  minDate = document.getElementById("range_start");
+  maxDate.addEventListener("focusout", (event) => {
+    console.log("hello");
+    max = new Date(maxDate.value);
+    min = new Date(minDate.value);
+    duration = (max - min)/3_600_000;
+    price = <%= @service.price_hourly %> * duration;
+  document.getElementById("total_price").innerHTML = price;
+
+});
 
 
-      <%= f.submit "Reserver", class: "btn btn-primary" %>
-    <% end %>
 
 
-
-  </div>
+</script>
 
 
