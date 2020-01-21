@@ -1,4 +1,3 @@
-
 <section class="banner">
 <!-- <div class="banner" style="background-image: url('<%= image_path "Banner.png" %>')"> -->
   <div class="container">
@@ -7,69 +6,69 @@
 </section>
 
 <section class="py-6 bg-gray-100">
-  <div class="container">
-    <div class="text-center pb-lg-4">
-      <p class="subtitle text-secondary"> THIS IS A SUBHEADER </p>
-      <h2 class="mb-5"> This is a header - h2 </h2>
+    <div class="container">
+      <div class="text-center pb-lg-4">
+        <p class="subtitle text-secondary">UN +1 POUR TOUTES LES OCCASIONS</p>
+        <h2 class="mb-5"> Votre +1 n'attend plus que vous !</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+          <div class="px-0 px-lg-3">
+            <div class="icon-rounded bg-primary-light mb-3">
+              <h3 class="h5">SOIRÉE D'ENTREPRISE</h3>
+              <p class="text-muted">Un(e) +1 pour impressionner ton patron</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+          <div class="px-0 px-lg-3">
+            <div class="icon-rounded bg-primary-light mb-3">
+              <h3 class="h5">DÎNER DE NOËL</h3>
+              <p class="text-muted">Un(e) +1 pour impressionner ta grand-mère</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+          <div class="px-0 px-lg-3">
+            <div class="icon-rounded bg-primary-light mb-3">
+              <h3 class="h5">DOUBLE DATE</h3>
+              <p class="text-muted">Un(e) +1 pour ne plus tenir la chandelle, we got your back :D</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4 mb-3 mb-lg-0 text-center">
-        <div class="px-0 px-lg-3">
-          <div class="icon-rounded bg-primary-light mb-3">
-            <h3 class="h5">This is a subheader - h3</h3>
-            <p class="text-muted">Déscription</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-3 mb-lg-0 text-center">
-        <div class="px-0 px-lg-3">
-          <div class="icon-rounded bg-primary-light mb-3">
-            <h3 class="h5">This is a subheader - h3</h3>
-            <p class="text-muted">Déscription</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-3 mb-lg-0 text-center">
-        <div class="px-0 px-lg-3">
-          <div class="icon-rounded bg-primary-light mb-3">
-            <h3 class="h5">This is a subheader - h3</h3>
-            <p class="text-muted">Déscription</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<p class="subtitle text-secondary"> Une expérience unique</p>
-<h2>Trouvez votre +1</h2>
+  <p class="subtitle text-secondary"> Une expérience unique</p>
+  <h2>Trouvez votre +1</h2>
 
 <div class="row">
   <% @services.first(4).each do |service|  %>
-    <div class="col">
-      <div class="card border-0">
-        <div class= card-banner>
-          <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
-          <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
-        </div>
-        <div class="card-body">
-          <a href="#" class="card-title">Le +1 de ton prochain dîner de Noël !</a>
-          <div class="d-flex justify-content-between">
-            <div class="card-subtitle mb-3">
-              <p class="mb-0 text-muted text-sm">25 ans</p>
-              <p class="mb-0 text-muted text-sm">1,78m</p>
-              <p class="mb-0 text-muted text-sm">Le Wagon</p>
-            </div>
-            <div class="align-self-end">
-              <p class="text-muted">
-                <span class="h4 text-primary"><%= service.price_hourly %></span> €/heure
-              </p>
+    <%= link_to service_path(service) do%>
+      <div class="col">
+        <div class="card border-0">
+          <div class= card-banner>
+            <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
+            <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="card-title">Le +1 de ta prochaine soirée corpo !</a>
+            <div class="d-flex justify-content-between">
+              <div class="card-subtitle mb-3">
+                <p class="mb-0 text-muted text-sm"><%= service.user.age  %> ans</p>
+                <p class="mb-0 text-muted text-sm"><%= service.user.height  %></p>
+                <p class="mb-0 text-muted text-sm">Le Wagon</p>
+              </div>
+              <div class="align-self-end">
+                <p class="text-muted">
+                  <span class="h4 text-primary"><%= service.price_hourly %></span> €/heure
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
-
-

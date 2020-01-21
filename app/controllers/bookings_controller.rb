@@ -11,14 +11,11 @@ class BookingsController < ApplicationController
   def create
 
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
-    @booking.service_id = 2
-    duration = (@booking.end_date - @booking.start_date)/3600
-    @booking.total_price = 20 * duration
-
-
-    raise
+    @booking.user = current_user
+    @booking.service_id = params[:service_id]
     @booking.save
+    flash[:notice]= "Votre reservation est enregistree"
+    redirect_to service_path(params[:service_id])
   end
 
   def update
@@ -40,7 +37,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :service_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
 end
