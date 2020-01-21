@@ -13,10 +13,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.service_id = params[:service_id]
-    duration = (@booking.end_date - @booking.start_date)/3600
-    @booking.total_price = 20 * duration
-
-
     @booking.save
     flash[:notice]= "Votre reservation est enregistree"
     redirect_to service_path(params[:service_id])
