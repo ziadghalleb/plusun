@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%#= link_to "#", class: "navbar-brand" do %>
     <%#= image_tag "../../assets/images/plus1.svg" %>
     <%# end %>
@@ -22,31 +22,31 @@
         <li class="nav-item">
           <%= image_tag "ZG_LW_PP.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div aria-labelledby="navbarDropdown">
-
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-            <%= link_to "Pourquoi +1", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Services", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "A propos", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Nous contacter", "#", class: "nav-link" %>
-          </li>
-          <%= link_to "S'identifier", "/users/sign_in", class: "nav-link" %>
+          <%= link_to "Pourquoi +1", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "S'inscrire", "/users/sign_up", class: "nav-link" %>
+          <%= link_to "Services", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "A propos", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Nous contacter", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "S'identifier", "/users/sign_in", class: "btn btn-sm btn-secondary", role: "button" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "S'inscrire", "/users/sign_up", class: "btn btn-sm btn-primary", role: "button" %>
         </li>
       <% end %>
     </ul>
   </div>
-</div>
+</nav>
 
 
