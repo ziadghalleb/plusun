@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.service_id = params[:service_id]

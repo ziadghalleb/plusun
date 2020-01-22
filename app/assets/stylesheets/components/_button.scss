@@ -1,28 +1,47 @@
-.btn.btn-lg.btn-block.btn-primary {
-  position: absolute;
-  width: 380px;
+.btn.btn-sm.btn-primary {
+  width: 100px;
   height: 40px;
-  left: 40px;
-  top: 600px;  
-  
   background: #EF233C;
   border: 1px solid #EF233C;
   border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  line-height: 30px;
 }
 
-.form-control {
+.btn.btn-sm.btn-primary:hover, .nav-link.btn.btn-sm.btn-primary:hover {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn.btn-sm.btn-secondary {
+  width: 100px;
+  height: 40px;
+  margin-right: 8px;
+  background: white;
+  border: 1px solid #EF233C;
+  border-radius: 5px;
+  color: #EF233C;
+  font-size: 1rem;
+  line-height: 30px;
+}
+
+.btn.btn-sm.btn-secondary:hover, .nav-link.btn.btn-sm.btn-secondary:hover {
+  background: #EF233C;
+  color: white;
+  font-size: 1rem;
+}
+
+.btn:active, .btn:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.sign {
   width: 380px;
   height: 40px;
   background: #FFFFFF;
   border: 1px solid #8D99AE;
   border-radius: 5px;
-}
-
-#dinner {
-  float: right;
-  position: absolute;
-  width: 960px;
-  height: 800px;
-  left: 476px;
-  top: 0px;
 }
