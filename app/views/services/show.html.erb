@@ -1,26 +1,51 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-8 card-presentation ">
-        <div class="card-product">
+        <div class="card-profile">
 
 
           <%= image_tag "#{@service.user_id}.png" , class: "avatar" %>
 
 
-          <div class="card-product-infos">
-            <h2><%= @service.user.first_name %></h2>
-            <p>Taille <strong> <%= @service.user.height %></strong> Alcool<strong> <%= @service.user.alcool %> </strong> Tabac <strong><%= @service.user.tabac %></strong> </p>
+          <div class="card-profile-infos">
+            <h1><%= @service.user.first_name %></h1>
+            <ul class="card-profile-synthesis">
+              <li><p><i class="fas fa-ruler"></i> <%= @service.user.height %> cm</li></p>
+              <li><p><i class="fas fa-cocktail"></i> <%= @service.user.alcool %></li></p>
+              <li><p><i class="fas fa-smoking"></i> <%= @service.user.tabac %></li></p>
+            </ul>
           </div>
         </div>
         <div>
           <p> <%= @service.user.description %></p>
+          <h4>Disponibilité</h4>
+          <%= simple_form_for [@service, @booking] do |f| %>
+          <div class="d-flex justify-content-between">
+            <div class="">
+              <%= f.input :start_date, as: :string, required: false, input_html: {id: "availabilityStart", class: "d-none"}, label_html: {class: "d-none"} %>
+            </div>
+            <div class="">
+              <%= f.input :end_date, as: :string, required: false, input_html: {id: "availabilityEnd", class: "d-none"}, label_html: {class: "d-none"}  %>
+            </div>
+          </div>
+           <!--  <%= f.submit "Reserver", class: "btn btn-primary btn-block" %> -->
+          <% end %>
+
+
+
+          <h4>Commentaires</h4>
         </div>
 
 
       </div>
 
       <div class="col-xs-12 col-sm-12 col-md-4 card-booking p-0">
-        <div class="service-booking p-3  border rounded mt-4">
+        <div class="service-booking p-4 shadow ml-lg-4 border rounded mt-4">
+
+
+
+
+
           <%= render partial:"bookings/new", booking: @booking %>
         </div>
       </div>
