@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>PlusUn</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -12,14 +13,18 @@
     <%= stylesheet_pack_tag 'application' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
-    <div class="main-container">
-      <%= yield %>
-    </div>
-    <%= render 'shared/footbar' %>
+    
+    <%= yield %>
+    
+    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+      <%= render 'shared/footbar' %>
+    <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= render 'shared/footbar' %>
   </body>
 </html>
+

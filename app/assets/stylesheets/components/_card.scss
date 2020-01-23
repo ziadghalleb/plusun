@@ -1,0 +1,28 @@
+.card-service {
+  width: 250px;
+  height: 345px;
+  background: #FFFFFF;
+  border: 1px solid #EDF2F4;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.card-service-banner {
+  background-image: url(card_image.png);
+  background-size: cover;
+  height: 175px;
+  color: white;
+  font-size: 20px;
+}
+
+.card-service-price {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 105%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #EF233C;
+}

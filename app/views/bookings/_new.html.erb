@@ -1,14 +1,51 @@
 
-<p> 4,3* (9 commentaires)</p>
-<div class="form">
-  <%= simple_form_for [@service, @booking] do |f| %>
-    <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
-    <%= f.input :end_date, as: :string, required: false, input_html: {id: "secondRangeInput"} %>
-    <h2>Prix par heure <%=  @service.price_hourly %> /h</h2>
-    <span id="total_price"></span>
-    <%= f.submit "Reserver", class: "btn btn-primary" %>
-  <% end %>
-</div>
+  <p> 4,3* (9 commentaires)</p>
+  <hr class="my-4">
+  <div class="form">
+    <%= simple_form_for [@service, @booking] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {id: "secondRangeInput"} %>
+      <div id="test">
+        <div class="d-flex justify-content-between">
+          <div>
+            <p><%= @service.price_hourly %>€ x <span id="duration"></span> heures</p>
+          </div>
+          <div>
+            <p><span id="prestation_price"></span>€</p>
+          </div>
+        </div>
+
+        <hr class="my-2">
+
+        <div class="d-flex justify-content-between">
+          <div>
+            <p>Frais de transport</p>
+          </div>
+          <div>
+            <p>10€</p>
+          </div>
+        </div>
+
+        <hr class="my-2">
+
+        <div class="d-flex justify-content-between">
+          <div>
+            <p><b>Prix total</b></p>
+          </div>
+          <div>
+            <p><b><span id="total_price"></span>€</b></p>
+          </div>
+        </div>
+      </div>
+
+      <%= f.submit "Reserver", class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+  <div>
+    <p><span id="message_prevalidation"></span></p>
+  </div>
+
+
 
 <script>
   maxDate = document.getElementById("secondRangeInput");
@@ -18,10 +55,14 @@
     max = new Date(maxDate.value);
     min = new Date(minDate.value);
     duration = (max - min)/3_600_000;
-    price = <%= @service.price_hourly %> * duration;
-  document.getElementById("total_price").innerHTML = price;
-
-});
+    prestation_price = <%= @service.price_hourly %> * duration;
+    total_price = prestation_price + 10;
+    document.getElementById("duration").innerHTML = duration;
+    document.getElementById("prestation_price").innerHTML = prestation_price;
+    document.getElementById("total_price").innerHTML = total_price;
+    document.getElementById("message_prevalidation").innerHTML = "Vous ne serez débité que si vous confirmez";
+    document.getElementById("test").style.display = "block !important";
+  });
 
 
 
