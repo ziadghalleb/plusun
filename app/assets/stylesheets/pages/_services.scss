@@ -1,0 +1,29 @@
+
+.main-container{
+  display:flex;
+}
+
+.research {
+  padding-top: 150px;
+  outline: dashed red 2px;
+}
+
+
+.card-deck {
+flex-grow: 1;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr fr;
+background: #FFFFFF;
+border: 1px solid #EDF2F4;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 7px;
+}
+
+.card {
+display: grid;
+position: relative;
+background: #FFFFFF;
+border: 1px solid #EDF2F4;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 7px;
+}
