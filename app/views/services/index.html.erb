@@ -1,13 +1,19 @@
-<h2>Catégorie : Diner</h2>
-<div class="card-deck">
-    <% @services.each do |service| %>
-  <div class="card">
-  <h2><%= service.name %></h2>
-  <h2><%= service.category %></h2>
-  <h2><%= service.price_hourly %></h2>
-  <h2><%= service.price_daily %></h2>
-  <p><%= service.description %></p>0
-  </div>
-<% end %>
+
+
+<div class="main-container">
+    <div class="research"></div>
+      <h2>Catégorie : Diner</h2>
+      <h3>Plus de 23 resultats</h3>
+        <div class="card-deck">
+            <% @services.each do |service| %>
+          <div class="card">
+            <h2><%= service.name %></h2>
+            <h2><%= service.category %></h2>
+            <h2><%= service.price_hourly %></h2>
+            <h2><%= service.price_daily %></h2>
+            <p><%= service.description %></p>0
+            <% end %>
+          </div>
+        </div>
 </div>
 
