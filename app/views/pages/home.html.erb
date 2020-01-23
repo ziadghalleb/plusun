@@ -1,74 +1,86 @@
 <section class="banner">
 <!-- <div class="banner" style="background-image: url('<%= image_path "Banner.png" %>')"> -->
-  <div class="container">
-    <h1><strong>Votre plus un au bal masqué ?</strong></h1>
-  </div>
+  <h1><strong>Votre plus un au bal masqué ?</strong></h1>
 </section>
 
-<section class="py-6 bg-gray-100">
-    <div class="container">
-      <div class="text-center pb-lg-4">
-        <p class="subtitle text-secondary">Un +1 POUR TOUTES LES OCCASIONS</p>
-        <h2 class="mb-5"> Votre +1 n'attend plus que vous !</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 mb-3 mb-lg-0 text-center">
-          <div class="px-0 px-lg-3">
-            <div class="icon-rounded bg-primary-light mb-3">
-              <h3 class="h5">SOIRÉE D'ENTREPRISE</h3>
-              <p class="text-muted">Un(e) +1 pour impressionner ton patron</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-3 mb-lg-0 text-center">
-          <div class="px-0 px-lg-3">
-            <div class="icon-rounded bg-primary-light mb-3">
-              <h3 class="h5">DÎNER DE NOËL</h3>
-              <p class="text-muted">Un(e) +1 pour impressionner ta grand-mère</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-3 mb-lg-0 text-center">
-          <div class="px-0 px-lg-3">
-            <div class="icon-rounded bg-primary-light mb-3">
-              <h3 class="h5">DOUBLE DATE</h3>
-              <p class="text-muted">Un(e) +1 pour ne plus tenir la chandelle, we got your back :D</p>
-            </div>
-          </div>
+<section class="arguments py-3">
+  <div class="text-center py-3">
+    <div class="subheader mb-0 pb-0">un +1 pour toutes les occasions</div>
+    <h2 class="mt-0 pt-0">Votre +1 n'attend plus que vous !</h2>
+  </div>
+  <div class="row">
+    <div class="col-4 mb-3 text-center">
+      <div class="px-0">
+        <div class="icon-rounded bg-primary-light mb-3">
+          <div class="mb-3"><i class="fas fa-glass-cheers" style="font-size: 42px; color: #4F4F4F;"></i></div>
+          <h3>SOIRÉE D'ENTREPRISE</h3>
+          <p class="text-muted">Un(e) +1 pour impressionner ton patron</p>
         </div>
       </div>
     </div>
-  </section>
+    <div class="col-4 mb-3 text-center">
+      <div class="px-0">
+        <div class="icon-rounded bg-primary-light mb-3">
+          <div class="mb-3"><i class="fas fa-sleigh" style="font-size: 42px; color: #4F4F4F;"></i></div>
+          <h3>DÎNER DE NOËL</h3>
+          <p class="text-muted">Un(e) +1 pour impressionner ta grand-mère</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 mb-3 text-center">
+      <div class="px-0">
+        <div class="icon-rounded bg-primary-light mb-3">
+          <div class="mb-3"><i class="fas fa-menorah" style="font-size: 42px; color: #4F4F4F;"></i></div>
+          <h3>DOUBLE DATE</h3>
+          <p class="text-muted">Un(e) +1 pour ne plus tenir la chandelle</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p class="subtitle text-secondary"> Une expérience unique</p>
-  <h2>Trouvez votre +1</h2>
-
-<div class="row">
-  <% @services.first(4).each do |service|  %>
-    <%= link_to service_path(service) do%>
-      <div class="col">
-        <div class="card border-0">
-          <div class= card-banner>
-            <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
-            <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
-          </div>
-          <div class="card-body">
-            <a href="#" class="card-title">Le +1 de ta prochaine soirée corpo !</a>
-            <div class="d-flex justify-content-between">
-              <div class="card-subtitle mb-3">
-                <p class="mb-0 text-muted text-sm"><%= service.user.age  %> ans</p>
-                <p class="mb-0 text-muted text-sm"><%= service.user.height  %></p>
-                <p class="mb-0 text-muted text-sm">Le Wagon</p>
-              </div>
-              <div class="align-self-end">
-                <p class="text-muted">
-                  <span class="h4 text-primary"><%= service.price_hourly %></span> €/heure
-                </p>
-              </div>
+<section class="py-3">
+  <div class="pl-3">
+    <div class="subheader">Une expérience unique</div>
+    <h2>Trouvez votre +1</h2>
+  </div>
+  <div class="d-flex flex-row justify-content-around">
+    <% @services.first(4).each do |service|  %>
+      <div class="card-service">
+        <div class= card-service-banner>
+          <%= link_to service_path(service) do%>
+          <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
+          <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
+        </div>
+        <div class="card-body">
+          <a href="#" class="card-title"><%= service.description %></a>
+          <div class="d-flex justify-content-between">
+            <div class="card-subtitle mb-3">
+              <p class="mb-0 text-muted text-sm">
+                <!-- <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i> -->
+                <span><%= image_tag "icon - Age Group.svg", style: "height: 20px; width: auto;"%></span>
+                <%= service.user.age %> ans
+              </p>
+              <p class="mb-0 text-muted text-sm">
+                <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i>
+                <%= service.user.height %> cm
+              </p>
+              <p class="mb-0 text-muted text-sm">
+                <i class="fas fa-graduation-cap" style="font-size: 16px; color: #4F4F4F;"></i>
+                Le Wagon
+              </p>
+            </div>
+            <div class="align-self-end">
+              <span class="card-service-price"><%= service.price_hourly %>€</span>
+              <br><span>/heure</span>
             </div>
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+</section>
+<section class="py-3">
+  <!-- TODO : Testimonies -->
+</section>
