@@ -1,19 +1,47 @@
 
 
-<div class="main-container">
-    <div class="research"></div>
-      <h2>Catégorie : Diner</h2>
-      <h3>Plus de 23 resultats</h3>
-        <div class="card-deck">
+<div class="container">
+  <div class="subheader">Catégorie : Diner</div>
+  <h3>Plus de 23 resultats</h3>
+  <div class="d-flex flex-row justify-content-around">
+    <div class="cards">
             <% @services.each do |service| %>
-          <div class="card">
-            <h2><%= service.name %></h2>
-            <h2><%= service.catstegory %></h2>
-            <h2><%= service.price_hourly %></h2>
-            <h2><%= service.price_daily %></h2>
-            <p><%= service.description %></p>0
-            <% end %>
+          <div class="card-service mx-3">
+            <div class= card-service-banner>
+                <%= link_to service_path(service) do%>
+                <%= image_tag "#{service.user_id}.png" , class: "avatar" %>
+                <p><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></p>
+            </div>
+              <div class="card-body">
+                <a href="#" class="card-title"><%= service.description %></a>
+                <div class="d-flex justify-content-between">
+                    <div class="card-subtitle mb-3">
+                        <p class="mb-0 text-muted text-sm">
+                          <!-- <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i> -->
+                          <span><%= image_tag "icon - Age Group.svg", style: "height: 20px; width: auto;"%></span>
+                          <%= service.user.age %> ans
+                        </p>
+                        <p class="mb-0 text-muted text-sm">
+                          <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i>
+                          <%= service.user.height %> cm
+                        </p>
+                        <p class="mb-0 text-muted text-sm">
+                          <i class="fas fa-graduation-cap" style="font-size: 16px; color: #4F4F4F;"></i>
+                          Le Wagon
+                        </p>
+                    </div>
+                    <div class="align-self-end">
+                      <span class="card-service-price"><%= service.price_hourly %>€</span>
+                      <br><span>/heure</span>
+                    </div>
+                </div>
+              </div>
           </div>
-        </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+
 
