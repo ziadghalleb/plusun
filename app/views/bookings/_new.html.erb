@@ -1,6 +1,6 @@
 
   <p> 4,3* (9 commentaires)</p>
-  <div data-availability="<%= @service.user.availabilities %>"></div>
+  <div id="test-data" data-availability="<%= @service.user.availabilities.first.start_date %>"></div>
   <hr class="my-4">
   <div class="form">
     <%= simple_form_for [@service, @booking] do |f| %>

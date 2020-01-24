@@ -4,9 +4,10 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 
 console.log(document.querySelector(".datepicker"))
 
-const a = ["2020-01-30", { from: "2020-02-02", to: "2020-02-07" },"2020-02-21", "2025-03-08", new Date(2025, 4, 9) ]
-
-
+const a = ["2020-01-30", { from: "2020-02-02", to: "2020-02-07" },"2020-02-21", "2025-03-08", new Date(2025, 4, 9) ];
+const av = document.getElementById("test-data").attributes;
+console.log(a);
+console.log(av);
 
 flatpickr("#range_start", {
     "plugins": [new rangePlugin({ input: "#secondRangeInput"})],
