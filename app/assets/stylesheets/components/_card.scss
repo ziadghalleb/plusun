@@ -29,6 +29,10 @@
   object-fit: cover;
 }
 
+.card-body {
+  padding: 8px 16px;
+}
+
 #first_name {
   position: absolute;
   left: 31%;
@@ -40,6 +44,12 @@
   opacity: 1;
   text-decoration: none;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.card-subtitle {
+  position: absolute;
+  top: 77.5%;
+  bottom: 5%;
 }
 
 .card-service-price {

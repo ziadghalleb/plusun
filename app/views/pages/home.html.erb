@@ -40,11 +40,11 @@
 </section>
 
 <section class="py-3">
-  <div class="pl-3">
+  <div class="pl-5">
     <div class="subheader">Une expérience unique</div>
     <h2>Trouvez votre +1</h2>
   </div>
-  <div class="d-flex flex-row justify-content-around">
+  <div class="d-flex flex-row justify-content-between px-5">
     <% @services.first(4).each do |service|  %>
     <div class="card-service">
       <%= link_to service_path(service), id: 'links' do %>
@@ -84,4 +84,41 @@
 </section>
 <section class="py-3">
   <!-- TODO : Testimonies -->
+  <div class="pl-5">
+    <div class="subheader">c'est la vérité</div>
+    <h2>Ils ont testé pour vous !</h2>
+  </div>
+    <div class="pb-3">
+      <div class="d-flex justify-content-center">
+        <div class="testimonial card rounded-lg shadow border-0 mx-2">
+          <%# <%= image_tag "ZG_LW_PP.png", class: "avatar avatar-testimony" %>
+          <div class="text px-5 py-5">
+            <div class="testimonial-quote"><i class="fas fa-quote-right" style="color: #000000;"></i></div>
+            <p class="testimonial-text mx-n1">+1 c'est bien ! +1 c'est pas bien !<br> +1 c'est bien ! +1 c'est pas bien !<br> +1 c'est bien !
+                                        +1 c'est pas bien !<br> +1 c'est bien ! +1 c'est pas bien !</p>
+            <strong>Mathilde</strong>
+          </div>
+        </div>
+
+        <div class="testimonial card rounded-lg shadow border-0 mx-2">
+          <%# <%= image_tag "ZG_LW_PP.png", class: "avatar avatar-testimony" %>
+          <div class="text px-5 py-5">
+            <div class="testimonial-quote"><i class="fas fa-quote-right" style="color: #000000;"></i></div>
+            <p class="testimonial-text mx-n1">Ma copine m'a largué la veille de notre mariage.
+                                        J'ai pu trouver une remplaçante en 3 clics pour mon voyage de noces.
+                                        Merci +1 !</p>
+            <strong>Jacques</strong>
+          </div>
+        </div>
+
+        <div class="testimonial card rounded-lg shadow border-0 mx-2">
+          <%# <%= image_tag "ZG_LW_PP.png", class: "avatar avatar-testimony" %>
+          <div class="text px-5 py-5">
+            <div class="testimonial-quote"><i class="fas fa-quote-right" style="color: #000000;"></i></div>
+            <p class="testimonial-text mx-n1">+1 on est dans la FrenchTech 121 ! +1 on est dans la FrenchTech 121 !
+                                        +1 on est dans la FrenchTech 121 ! +1 on est dans la FrenchTech 121 !</p>
+            <strong>La team +1</strong>
+          </div>
+        </div>
+    </div>
 </section>

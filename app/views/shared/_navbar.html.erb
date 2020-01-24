@@ -8,7 +8,7 @@
           <%= link_to "Pourquoi +1", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Services", "#", class: "nav-link" %>
+          <%= link_to "Services", "/services", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "A propos", "#", class: "nav-link" %>
@@ -19,7 +19,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "ZG_LW_PP.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Mon Compte", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Mon compte", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -28,7 +28,7 @@
           <%= link_to "Pourquoi +1", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Services", "#", class: "nav-link" %>
+          <%= link_to "Services", "/services", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "A propos", "#", class: "nav-link" %>
