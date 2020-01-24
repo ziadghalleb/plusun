@@ -2,7 +2,19 @@
   <h1 class="text-center py-5">Avec <span style="font-family: futura; letter-spacing: -0.2em; color: #D90429;">+<span style="color: #000000">1</span></span>, fini le survol sans fin.
                               <br>Retrouvez-vous en bonne compagnie !</h1>
   <div class="subheader mx-2">catégorie: dîner</div>
-  <h3 class="mx-2">Ces <%= @services.all.size %> profils n'attendent que vous !</h3>
+  <h3 class="mx-2">Ces <%= @services.size %> profils n'attendent que vous !</h3>
+
+
+  <%= simple_form_for :query, url: services_path, method: :get do |f| %>
+    <div class="d-flex">
+      <%= f.input :category, collection: ['Mariage', 'Soirée'] %>
+      <%= f.input :sexe, collection: ['Male', 'Female'] %>
+      <%= f.input :alcool, collection: ['A l\'occasion', 'Jamais', 'Régulièrement'] %>
+      <%= f.input :tabac, collection: ['A l\'occasion', 'Jamais', 'Régulièrement'] %>
+      <%= f.submit class: "btn btn-primary", value: "Rechercher" %>
+    </div>
+  <% end %>
+
 
   <div class="d-flex flex-row justify-content-around">
     <div class="cards pb-4">
