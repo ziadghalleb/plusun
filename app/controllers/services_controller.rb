@@ -5,6 +5,24 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
     @users = User.all
+    if params[:query].present?
+
+      if !params[:query][:category].empty?
+        @services = @services.where(category: params[:query][:category])
+      end
+
+      if !params[:query][:name].empty?
+        @services = @services.where(name: params[:query][:name])
+      end
+
+      if !params[:query][:tabac].empty?
+        @services = @services.select { |service| service.user.tabac == params[:query][:tabac] }
+      end
+
+
+    else
+      @services = Service.all
+    end
   end
 
   def show
