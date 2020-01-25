@@ -6,8 +6,8 @@
     <p class="subheader mx-2">Démarrer votre recherche</p>
     <%= simple_form_for :query, url: services_path, method: :get do |f| %>
       <div class="d-flex align-items-center justify-content-around">
-        <%= f.input :category, label: false, allow_blank: false, prompt: "Categories", collection: ['Mariage', 'Soirée'],input_html: { class: "field-width" } %>
-        <%= f.input :sexe, label: false, allow_blank: false, prompt:'Sexe',collection: ['Male', 'Female'],input_html: { class: "field-width" } %>
+        <%= f.input :category, label: false, allow_blank: false, prompt: "Categories", collection: ['Mariage', 'Soirée', 'Diner'],input_html: { class: "field-width" } %>
+        <%= f.input :sexe, label: false, allow_blank: false, prompt:'Sexe',collection: ['Homme', 'Femme'],input_html: { class: "field-width" } %>
         <%= f.input :alcool, label: false, allow_blank: false, prompt: "Alcool", collection: ['A l\'occasion', 'Jamais', 'Régulièrement'], input_html: { class: "field-width" } %>
         <%= f.input :tabac, label: false, allow_blank: false, prompt: 'Tabac',collection: ['A l\'occasion', 'Jamais', 'Régulièrement'] %>
         <%= f.submit class: "btn btn-sm btn-primary button-menu", value: "Rechercher", input_html: { class: "field-width" } %>

@@ -46,4 +46,15 @@ for i in 1..12 do
     user_id: (i).to_i
   )
   service.save!
+
+
+  Availability.create(start_date: "2020-01-20 12:00", end_date: "2020-01-25 12:00", user_id: 4)
+  Availability.create(start_date: "2020-01-30 12:00", end_date: "2020-02-25 12:00", user_id: 4)
+  Availability.create(start_date: "2020-01-25 12:00", end_date: "2020-01-30 12:00", user_id: 5)
+  Availability.create(start_date: "2020-02-04 12:00", end_date: "2020-02-12 12:00", user_id: 5)
+  Availability.create(start_date: "2020-02-20 12:00", end_date: "2020-03-30 12:00", user_id: 5)
+
+
+
+
 end
