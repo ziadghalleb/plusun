@@ -1,9 +1,9 @@
 <div class="container">
-  <h1 class="text-center py-5">Avec <span style="font-family: futura; letter-spacing: -0.2em; color: #D90429;">+<span style="color: #000000">1</span></span>, fini le survol sans fin.
+  <h1 class="text-center py-5" style="font-size: 48px;">Avec <span style="font-family: futura; letter-spacing: -0.2em; color: #D90429;">+<span style="color: #000000">1</span></span>, fini le survol sans fin.
                               <br>Retrouvez-vous en bonne compagnie !</h1>
 <div class="container">
   <div class="container3">
-    <p class="subheader mx-2">Démarrer votre recherche</p>
+    <p class="subheader mx-2">Démarrez votre recherche</p>
     <%= simple_form_for :query, url: services_path, method: :get do |f| %>
       <div class="d-flex align-items-center justify-content-around">
         <%= f.input :category, label: false, allow_blank: false, prompt: "Categories", collection: ['Mariage', 'Soirée'],input_html: { class: "field-width" } %>
@@ -12,7 +12,7 @@
         <%= f.input :tabac, label: false, allow_blank: false, prompt: 'Tabac',collection: ['A l\'occasion', 'Jamais', 'Régulièrement'] %>
         <%= f.submit class: "btn btn-sm btn-primary button-menu", value: "Rechercher", input_html: { class: "field-width" } %>
       </div>
-      <h3 class="mx-2">Ces <%= @services.size %> profils n'attendent que vous !</h3>
+      <h3 class="mx-2 mt-2 mb-3">Ces <%= @services.size %> profils n'attendent que vous !</h3>
     <% end %>
   </div>
 
@@ -20,10 +20,11 @@
     <div class="d-flex flex-row justify-content-around">
       <div class="cards pb-4">
       <% @services.each_with_index do |service, index|  %>
-      <div class="card-service mx2">
+      <div class="card-service mx-1">
         <%= link_to service_path(service), id: 'links' do %>
         <div class="card-service-banner" 
         style="background-image: url(https://source.unsplash.com/random/30<%= index %>x30<%= index %>); background-size: cover;">
+          <span class="badge badge-pill mb-3 py-1"><%= service.category %></span>
           <%= image_tag "profile_pics/#{service.user_id}.jpg", class: "avatar-bordered" %>
           <h3 id="first_name"><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></h3>
         </div>
