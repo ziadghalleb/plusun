@@ -3,6 +3,7 @@
       <div class="col-xs-12 col-sm-12 col-md-8 card-presentation">
         <div class="card-profile">
 
+          <div id ="essaiT" data-dates_enable="<%= @enable_dates.to_json %>" data-dates_disable="<%= @disable_dates.to_json %>"></div>
 
           <%= image_tag "#{@service.user_id}.png" , class: "avatar" %>
 
@@ -18,6 +19,7 @@
         </div>
         <div>
           <p> <%= @service.user.description %></p>
+          <p><%= @date_debut %></p>
           <h4>Disponibilité</h4>
           <%= simple_form_for [@service, @booking] do |f| %>
           <div class="d-flex justify-content-between">

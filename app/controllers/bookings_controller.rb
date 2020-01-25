@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking.total_price = (@booking.end_date - @booking.start_date)/3600 * @booking.service.price_hourly + 10
     if @booking.save
       flash[:notice]= "Votre reservation est enregistree"
+
     else
       flash[:notice]= "Votre reservation n est pas enregistree"
     end
