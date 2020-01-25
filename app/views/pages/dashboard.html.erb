@@ -15,24 +15,35 @@
     <h1 class="pl-3 pt-4">Mes réservations</h1>
     <div class="container d-flex flex-wrap">
       <div class="card-booking card rounded-lg shadow border-0 mx-2">
-        <h3 class="mt-2 ml-2 d-flex">Mathilde <span class="badge badge-pill mb-3">confirmée</span></h3>
+        <h3 class="mt-2 ml-2 d-flex"><%= @user.bookings.first.service.user.first_name %><span class="badge badge-pill-2 mb-3 ml-5">confirmée</span></h3>
         <div class="d-flex justify-content-between">
-<!--          <div class="card-subtitle mb-3">
+          <div class="ml-4 mt-n5">
             <p class="mb-0 text-muted text-sm">
+              <!-- <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i> -->
               <span><%= image_tag "icon - Age Group.svg", style: "height: 20px; width: auto;"%></span>
-              <%= service.user.age %> ans
+              <%= @user.bookings.first.service.user.age %> ans
             </p>
             <p class="mb-0 text-muted text-sm">
               <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i>
-              <%= service.user.height %> cm
+              <%= @user.bookings.first.service.user.height %> cm
             </p>
             <p class="mb-0 text-muted text-sm">
               <i class="fas fa-graduation-cap" style="font-size: 16px; color: #4F4F4F;"></i>
               Le Wagon
             </p>
+            <p class="mb-0 text-muted text-sm">
+              <i class="fas fa-calendar" style="font-size: 16px; color: #4F4F4F;"></i>
+              <%= @user.bookings.first.start_date %>
+            </p>
+            <p class="mb-0 text-muted text-sm">
+              <i class="fas fa-calendar" style="font-size: 16px; color: #4F4F4F;"></i>
+              <%= @user.bookings.first.end_date %>
+            </p>
           </div>
-      </div> 
--->
+          <div class="align-self-end">
+            <h3 class="card-service-price ml-5" style="font-size: 22px; width: 100px;"><%= @user.bookings.first.total_price %> €</h3>
+          </div>
+        </div> 
     </div>
 
   </div>
