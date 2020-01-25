@@ -48,8 +48,8 @@
     <% @services.first(4).each do |service|  %>
     <div class="card-service">
       <%= link_to service_path(service), id: 'links' do %>
-      <div class= card-service-banner>
-        <%= image_tag "#{service.user_id}.png", class: "avatar-bordered" %>
+      <div class="card-service-banner">
+        <%= image_tag "profile_pics/#{service.user_id}.jpg", class: "avatar-bordered" %>
         <h3 id="first_name"><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></h3>
       </div>
       <div class="card-body">

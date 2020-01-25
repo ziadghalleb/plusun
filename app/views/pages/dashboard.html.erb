@@ -1,0 +1,17 @@
+<div class="container-fluid d-flex flex-row mx-0 px-0">
+  <div class="col-3 cartouche">
+    <div class= card-service-banner>
+      <%= image_tag "profile_pics/#{service.user_id}.jpg", class: "avatar-bordered" %>
+      <h3 id="first_name"><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></h3>
+    </div>
+  </div>
+
+  <div class="col-9">
+    <h1 class="pl-3 pt-4">Mes réservations</h1>
+    <div class="container">
+
+    </div>
+
+  </div>
+
+</div>

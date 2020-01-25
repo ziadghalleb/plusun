@@ -1,0 +1,11 @@
+.container-fluid {
+  min-height: 100vh;
+}
+
+.cartouche {
+  border-radius: 0px 15px 15px 0px;
+  background-image: linear-gradient(rgba(217, 4, 41, 0.8),rgba(217, 4, 41, 0.6) ), asset-url('Banner.png');
+  background-position: left;
+  background-size: cover;
+}
+
