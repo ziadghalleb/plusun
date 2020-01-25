@@ -32,12 +32,17 @@ body {
   width: 70%
 }
 
+.argument py-3 {
+  height: 200px;
+}
+
 .banner p {
   font-size: 20px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 #subheader {
+  top: 20px;
   opacity:1;
   color: white;
   margin-top: 4px;
@@ -49,7 +54,7 @@ body {
 
 .arguments {
   background-color: #EEEEEE;
-  height: auto;
+  height: 300px;
 }
 
 .header h1 {
