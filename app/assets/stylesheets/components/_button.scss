@@ -9,11 +9,19 @@
   color: white;
   font-size: 1rem;
   line-height: 30px;
+
+  &:hover{
+   background-color: #D90429;
+   color: white;
+  }
 }
 
-.btn.btn-sm.btn-primary:hover, .nav-link.btn.btn-sm.btn-primary:hover {
-  color: white;
-  font-size: 1rem;
+.button-menu {
+  margin-top: -15px;
+}
+
+.container5{
+  width: 30%;
 }
 
 .btn.btn-sm.btn-secondary {
@@ -27,6 +35,48 @@
   font-size: 1rem;
   line-height: 30px;
 }
+
+.buttonindex {
+   padding: 20px;
+   background: white;
+   border: 1px;
+   border-radius: 5px;
+   color: #D90429;
+   font-weight: bold;
+   font-size: 1rem;
+   line-height: 30px;
+   opacity: 1;
+
+  &:hover{
+   background-color: #D90429;
+   color: white;
+  }
+}
+
+a.buttonindex {
+  text-decoration: none;
+}
+
+.button-module--cta--MUy1m {
+  width: 250px;
+  height: 40px;
+  margin-right: 8px;
+  background: white;
+  border: 1px;
+  border-radius: 5px;
+  color: #D90429;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 30px;
+  opacity: 1;
+
+ &:hover{
+  background-color: #D90429;
+  color: white;
+ }
+}
+
+
 
 .btn.btn-sm.btn-secondary:hover, .nav-link.btn.btn-sm.btn-secondary:hover {
   background: #EF233C;
