@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
-  # before_action :set_user, only: [:dashboard]
 
   def home
     @services = Service.all
