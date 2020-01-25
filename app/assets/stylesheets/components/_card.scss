@@ -1,3 +1,5 @@
+// SERVICE-PROFILE CARDS
+
 .card-service {
   position: relative;
   width: 250px;
@@ -72,4 +74,24 @@
 #per_hour {
   font-size: 16px;
   color: #EF233C;
+}
+
+// BOOKING CARDS
+.card-booking {
+  position: relative;
+  width: 450px;
+  height: 225px;
+}
+
+.badge.badge-pill {
+  position: absolute;
+  left: 82%;
+  top: 3%;
+  background-color: #D90429;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  opacity: 1;
 }

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'home', to: 'pages#home', as: :home
   root to: 'pages#home'
 
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
+
   # Routes for the Service Model
   resources :services do
     resources :bookings, only: [:create]
