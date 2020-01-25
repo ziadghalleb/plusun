@@ -12,7 +12,7 @@
         <%= f.input :tabac, label: false, allow_blank: false, prompt: 'Tabac',collection: ['A l\'occasion', 'Jamais', 'Régulièrement'] %>
         <%= f.submit class: "btn btn-sm btn-primary button-menu", value: "Rechercher", input_html: { class: "field-width" } %>
       </div>
-      <h3 class="mx-2">Ces <%= @services.size %> profils n'attendent que vous !</h3>
+      <h3 class="mx-2 mt-2 mb-3">Ces <%= @services.size %> profils n'attendent que vous !</h3>
     <% end %>
   </div>
 
@@ -20,7 +20,7 @@
     <div class="d-flex flex-row justify-content-around">
       <div class="cards pb-4">
       <% @services.each_with_index do |service, index|  %>
-      <div class="card-service mx2">
+      <div class="card-service mx-1">
         <%= link_to service_path(service), id: 'links' do %>
         <div class="card-service-banner" 
         style="background-image: url(https://source.unsplash.com/random/30<%= index %>x30<%= index %>); background-size: cover;">
