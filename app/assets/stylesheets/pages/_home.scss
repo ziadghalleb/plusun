@@ -5,7 +5,7 @@ body {
 
 .banner {
   background-image: asset-url('Banner.png');
-  height: 350px;
+  height: 600px;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
@@ -16,21 +16,35 @@ body {
   align-items: center;
 }
 
+.field-width {
+  width: 150px;
+}
 .banner h1 {
-  position: absolute;
-  left: 3%;
-  right: 20%;
-  top: 65%;
-  mix-blend-mode: normal;
+  //position: absolute;
+  //left: 3%;
+  //right: 20%;
+  //top: 55%;
+  //mix-blend-mode: normal;
   color: white;
-  opacity: 1;
+  opacity: 1!important;
+}
+.container3{
+  width: 70%
 }
 
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+#subheader {
+  opacity:1;
+  color: white;
+  margin-top: 4px;
+}
+
+.margin-right {
+  margin-right: 4px;
 }
 
 .arguments {
@@ -64,10 +78,10 @@ body {
 }
 
 .testimonial-text {
-// 
+//
 }
 
 .avatar-testimony {
-// 
+//
 }
 
