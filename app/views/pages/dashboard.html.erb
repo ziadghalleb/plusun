@@ -15,7 +15,7 @@
     <h1 class="pl-3 pt-4">Mes réservations</h1>
     <div class="container d-flex flex-wrap">
       <div class="card-booking card rounded-lg shadow border-0 mx-2">
-        <h3 class="mt-2 ml-2 d-flex">Lucie <span class="badge badge-pill-2 mb-3 ml-5">confirmée</span></h3>
+        <h3 class="mt-2 ml-2 d-flex"><%= @user.bookings.first.service.user.first_name %><span class="badge badge-pill-2 mb-3 ml-5">confirmée</span></h3>
         <div class="d-flex justify-content-between">
           <div class="ml-4 mt-n5">
             <p class="mb-0 text-muted text-sm">
