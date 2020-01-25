@@ -11,14 +11,17 @@ class ServicesController < ApplicationController
         @services = @services.where(category: params[:query][:category])
       end
 
-      if !params[:query][:name].empty?
-        @services = @services.where(name: params[:query][:name])
+      if !params[:query][:sexe].empty?
+        @services = @services.select { |service| service.user.sexe == params[:query][:sexe] }
+      end
+
+      if !params[:query][:alcool].empty?
+        @services = @services.select { |service| service.user.alcool == params[:query][:alcool] }
       end
 
       if !params[:query][:tabac].empty?
         @services = @services.select { |service| service.user.tabac == params[:query][:tabac] }
       end
-
 
     else
       @services = Service.all
