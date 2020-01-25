@@ -48,12 +48,12 @@
   </div>
 </section>
 
-<section class="py-3">
+<section class="py-3 mt-5">
   <div class="pl-5">
     <div class="subheader">Une expérience unique</div>
     <h2>Trouvez votre +1</h2>
   </div>
-  <div class="d-flex flex-row justify-content-between px-5">
+  <div class="d-flex flex-row justify-content-between px-5 mt-4">
     <% @services.first(4).each do |service|  %>
     <div class="card-service">
       <%= link_to service_path(service), id: 'links' do %>
@@ -91,14 +91,14 @@
     <% end %>
   </div>
 </section>
-<section class="py-3">
+<section class="py-3 mt-4">
   <!-- TODO : Testimonies -->
   <div class="pl-5">
     <div class="subheader">c'est la vérité</div>
     <h2>Ils ont testé pour vous !</h2>
   </div>
     <div class="pb-3">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center mt-4">
         <div class="testimonial card rounded-lg shadow border-0 mx-2">
           <%# <%= image_tag "ZG_LW_PP.png", class: "avatar avatar-testimony" %>
           <div class="text px-5 py-5">
