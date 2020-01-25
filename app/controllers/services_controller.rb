@@ -30,6 +30,10 @@ class ServicesController < ApplicationController
 
   def show
     @booking = Booking.new
+    # raise
+    @enable_dates = prepdate_enable
+    # @disable_dates = prepdate_disable
+
   end
 
   def update
@@ -54,4 +58,21 @@ class ServicesController < ApplicationController
     params.require(:service).permit(:category, :name, :description, :price_hourly, :price_daily)
   end
 
+  def prepdate_enable
+    @service.user.availabilities.map do |availability|
+      {
+        from: availability.start_date.strftime('%Y-%m-%d %H:%M'),
+        to: availability.end_date.strftime('%Y-%m-%d %H:%M')
+      }
+    end
+  end
+
+  #  def prepdate_disable
+  #   @service.bookings.map do |availability|
+  #     {
+  #       from: availability.start_date.strftime('%Y-%m-%d %H:%M'),
+  #       to: availability.end_date.strftime('%Y-%m-%d %H:%M')
+  #     }
+  #   end
+  # end
 end
