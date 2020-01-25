@@ -34,6 +34,13 @@
   font-size: 1rem;
 }
 
+.btn-dashboard {
+  width: 250px !important;
+  border: 2px solid white !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .btn:active, .btn:focus {
   border: none;
   box-shadow: none;

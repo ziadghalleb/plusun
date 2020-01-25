@@ -1,14 +1,38 @@
 <div class="container-fluid d-flex flex-row mx-0 px-0">
-  <div class="col-3 cartouche">
-    <div class="">
-      <%= image_tag "ZG_LW_PP.png", class: "avatar-bordered-dashboard" %>
+  <div class="col-3 d-flex justify-content-center cartouche ">
+    <div class="d-flex flex-column justify-content-center mt-n5">
+      <div class="userinfo text-center py-3">
+        <%= image_tag "ZG_LW_PP.png", class: "avatar-bordered-dashboard" %>
+        <h2 class="mt-2" id="dashboard-username">Ziad</h2>
+      </div>
+
+      <button class="btn btn-sm btn-secondary btn-dashboard">Mes informations</button>
+      <button class="btn btn-sm btn-secondary btn-dashboard mt-3">Mes réservations</button>
     </div>
   </div>
 
   <div class="col-9">
     <h1 class="pl-3 pt-4">Mes réservations</h1>
-    <div class="container">
-
+    <div class="container d-flex flex-wrap">
+      <div class="card-booking card rounded-lg shadow border-0 mx-2">
+        <h3 class="mt-2 ml-2 d-flex">Mathilde <span class="badge badge-pill mb-3">confirmée</span></h3>
+        <div class="d-flex justify-content-between">
+          <div class="card-subtitle mb-3">
+            <p class="mb-0 text-muted text-sm">
+              <!-- <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i> -->
+              <span><%= image_tag "icon - Age Group.svg", style: "height: 20px; width: auto;"%></span>
+              <%= service.user.age %> ans
+            </p>
+            <p class="mb-0 text-muted text-sm">
+              <i class="fas fa-ruler" style="font-size: 16px; color: #4F4F4F;"></i>
+              <%= service.user.height %> cm
+            </p>
+            <p class="mb-0 text-muted text-sm">
+              <i class="fas fa-graduation-cap" style="font-size: 16px; color: #4F4F4F;"></i>
+              Le Wagon
+            </p>
+          </div>
+      </div>
     </div>
 
   </div>
