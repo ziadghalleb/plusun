@@ -36,11 +36,14 @@ for i in 1..12 do
   )
   user.save!
 
+
+
+
   service = Service.new(
-    category: ['Mariage', 'Soirée'].sample,
-    name: ['Mariage', 'Soirée'].sample,
+    category: ['Mariage', 'Soirée', 'Diner'].sample,
+    name: "Bonjour, je suis #{user.first_name}",
     description: "none of your business",
-    price_hourly: rand(20..60),
+    price_hourly: rand(20..30),
     # price_daily will serve the service pic
     price_daily: (i).to_s,
     user_id: (i).to_i
@@ -48,13 +51,14 @@ for i in 1..12 do
   service.save!
 
 
-  Availability.create(start_date: "2020-01-20 12:00", end_date: "2020-01-25 12:00", user_id: 4)
-  Availability.create(start_date: "2020-01-30 12:00", end_date: "2020-02-25 12:00", user_id: 4)
-  Availability.create(start_date: "2020-01-25 12:00", end_date: "2020-01-30 12:00", user_id: 5)
-  Availability.create(start_date: "2020-02-04 12:00", end_date: "2020-02-12 12:00", user_id: 5)
-  Availability.create(start_date: "2020-02-20 12:00", end_date: "2020-03-30 12:00", user_id: 5)
+
 
 
 
 
 end
+  Availability.create(start_date: "2020-01-20 12:00", end_date: "2020-01-25 12:00", user_id: 4)
+  Availability.create(start_date: "2020-01-30 12:00", end_date: "2020-02-25 12:00", user_id: 4)
+  Availability.create(start_date: "2020-01-25 12:00", end_date: "2020-01-30 12:00", user_id: 5)
+  Availability.create(start_date: "2020-02-04 12:00", end_date: "2020-02-12 12:00", user_id: 5)
+  Availability.create(start_date: "2020-02-20 12:00", end_date: "2020-03-30 12:00", user_id: 5)
