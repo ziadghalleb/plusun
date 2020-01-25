@@ -19,10 +19,11 @@
 
     <div class="d-flex flex-row justify-content-around">
       <div class="cards pb-4">
-      <% @services.each do |service|  %>
+      <% @services.each_with_index do |service, index|  %>
       <div class="card-service mx2">
         <%= link_to service_path(service), id: 'links' do %>
-        <div class= card-service-banner>
+        <div class="card-service-banner" 
+        style="background-image: url(https://source.unsplash.com/random/30<%= index %>x30<%= index %>); background-size: cover;">
           <%= image_tag "profile_pics/#{service.user_id}.jpg", class: "avatar-bordered" %>
           <h3 id="first_name"><%= @users.select{ |user| user.id == service.user_id }[0].first_name %></h3>
         </div>
